@@ -1,3 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*Universal Selector*/
+}
+
+.box {
+    margin: 1rem;
+    border: 1px solid rgb(0 0 0 / 10%);
+    padding: 1rem;
+    background-color: #9a8c8c;
+    color: #262525;
+    /*Class Selector*/
+}
+
 nav {
     background-color: darkblue;
     padding: 10px;
@@ -26,6 +42,8 @@ main {
 }
 
 main img {
+    /* you most likely will have other CSS declarations here */
+    float: right;
     width: 150px;
     height: auto;
     border: 1px solid black;
@@ -35,12 +53,6 @@ main img {
 
 aside {
     width: 20rem;
-    margin: 1rem;
-    border: 1px solid rgb(0 0 0 / 0.2);
-    /* 1️⃣ */
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
     text-align: center;
 }
 
@@ -48,6 +60,12 @@ aside img {
     width: 200px;
     height: auto;
 
+}
+
+aside h2 {
+    position: absolute;
+    top: 47px;
+    left: 150px;
 }
 
 p {
