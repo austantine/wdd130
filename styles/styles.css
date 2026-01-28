@@ -35,6 +35,7 @@ img {
     border: 1px solid black;
     padding: 2px;
     box-shadow: 0 0 30px gray;
+
 }
 
 main {
@@ -43,7 +44,7 @@ main {
 
 main img {
     /* you most likely will have other CSS declarations here */
-    float: right;
+
     width: 150px;
     height: auto;
     border: 1px solid black;
@@ -53,7 +54,14 @@ main img {
 
 aside {
     width: 20rem;
+    margin: 1rem;
+    border: 1px solid rgb(0 0 0 / 0.2);
+    /* 1️⃣ */
+    padding: 1rem;
+    background-color: #eee;
+    color: #333;
     text-align: center;
+
 }
 
 aside img {
@@ -62,14 +70,9 @@ aside img {
 
 }
 
-aside h2 {
-    position: absolute;
-    top: 47px;
-    left: 150px;
-}
-
 p {
     padding: 0;
+
 }
 
 footer {
