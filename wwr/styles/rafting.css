@@ -138,30 +138,35 @@ article {
 }
 
 /* end of history */
-section {
+.figures {
     display: flex;
     /* arrange figures in a row */
-    flex-wrap: wrap;
-    /* allow wrapping on smaller screens */
+    justify-content: space-between;
+    /* spread them evenly */
     gap: 1rem;
-    /* spacing between figures */
+    /* space between figures */
     max-width: 840px;
-    /* container width */
+    /* container max width */
     margin: 0 auto;
     /* center on page */
+    flex-wrap: wrap;
+    /* allow wrapping on smaller screens */
 }
 
-figure {
-    flex: 1 1 155px;
-    /* each figure takes equal space */
+.figures figure {
+    flex: 1 1 calc(20% - 1rem);
+    /* each figure ~20% of row */
     text-align: center;
     /* captions centered under images */
+    box-sizing: border-box;
 }
 
-figure img {
+.figures img {
     width: 100%;
+    /* image fills its figure box */
     height: auto;
     display: block;
+    box-shadow: 0 0 30px gray;
 }
 
 /*end of slideshow */
