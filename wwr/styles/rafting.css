@@ -138,29 +138,28 @@ article {
 }
 
 /* end of history */
-.figures {
+section {
     display: flex;
     /* arrange figures in a row */
-    justify-content: space-between;
-    /* spread them evenly */
+    flex-wrap: wrap;
+    /* allow wrapping on smaller screens */
     gap: 1rem;
-    /* space between figures */
+    /* spacing between figures */
     max-width: 840px;
-    /* container max width */
+    /* container width */
     margin: 0 auto;
     /* center on page */
 }
 
-.figures figure {
-    flex: 1;
-    /* each figure takes equal width */
+figure {
+    flex: 1 1 155px;
+    /* each figure takes equal space */
     text-align: center;
-    /* center captions under images */
+    /* captions centered under images */
 }
 
-.figures img {
+figure img {
     width: 100%;
-    /* image fills its figure box */
     height: auto;
     display: block;
 }
