@@ -99,20 +99,6 @@ h1 {
     /* center the text horizontally */
 }
 
-.hero article {
-    position: absolute;
-    /* overlay on top of the image */
-    bottom: 0;
-    /* stick to the bottom of the hero */
-    left: 0;
-    /* start at the left edge */
-    width: 100%;
-    /* spread horizontally across the image */
-    background: rgba(0, 0, 0, 0.5);
-    /* semi-transparent background for readability */
-    color: var(--accent2-color);
-    /* use your golden yellow text */
-    padding: 16px;
-    text-align: center;
-    /* center the text horizontally */
+.hero article h2 {
+    display: inline-block;
 }
