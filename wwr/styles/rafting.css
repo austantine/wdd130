@@ -14,10 +14,52 @@
 header {
     background-color: var(--accent1-color);
     color: var(--accent2-color);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    /* logo takes natural width, nav fills rest */
+    align-items: center;
+    /* vertical alignment */
+    max-width: 840px;
+    /* matches your layout */
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+header img.logo {
+    max-height: 60px;
 }
 
 header nav a {
     color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    /* makes background/border apply neatly */
+    padding: 0.5rem 1rem;
+    /* spacing inside each link */
+    background-color: var(--accent2-color);
+    /* your chosen background */
+    border: 1px solid var(--accent1-color);
+    /* border around each link */
+    text-align: center;
+    /* centers text inside the box */
+    text-decoration: none;
+    /* remove underline */
+    color: var(--accent1-color);
+    /* text color */
+    font-weight: bold;
+    border-radius: 4px;
+    /* optional rounded corners */
+
+}
+
+header nav {
+    display: flex;
+    /* flex for horizontal layout */
+    justify-content: flex-end;
+    /* push links to the right */
+    gap: 1rem;
+    /* spacing between links */
 }
 
 * {
@@ -52,6 +94,78 @@ article {
     margin: 16px;
     padding: 8px;
 }
+
+.history {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    /* text | image | text */
+    align-items: center;
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.history p {
+    text-align: justify;
+}
+
+.history img {
+    max-width: 250px;
+    height: auto;
+    display: block;
+    background-color: #f9f9f9;
+    /* subtle background */
+    border: 2px solid #333;
+    /* border around image */
+    padding: 0.5rem;
+    /* spacing inside border */
+    border-radius: 8px;
+    /* optional rounded corners */
+    box-shadow: 0 0 30px gray;
+}
+
+/* Responsive stacking on smaller screens */
+@media (max-width: 768px) {
+    .history {
+        grid-template-columns: 1fr;
+        /* single column */
+    }
+
+    .history img {
+        margin: 1rem auto;
+        /* center image */
+    }
+}
+
+/* end of history */
+.figures {
+    display: flex;
+    /* arrange figures in a row */
+    justify-content: space-between;
+    /* spread them evenly */
+    gap: 1rem;
+    /* space between figures */
+    max-width: 840px;
+    /* container max width */
+    margin: 0 auto;
+    /* center on page */
+}
+
+.figures figure {
+    flex: 1;
+    /* each figure takes equal width */
+    text-align: center;
+    /* center captions under images */
+}
+
+.figures img {
+    width: 100%;
+    /* image fills its figure box */
+    height: auto;
+    display: block;
+}
+
+/*end of slideshow */
 
 .socialmedia a {
     text-decoration: none;
@@ -106,4 +220,39 @@ h1 {
 .hero article h2 {
     display: inline-block;
     color: #fff;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    /* text on left, nav on right */
+    align-items: center;
+    /* vertical alignment */
+    max-width: 840px;
+    /* same width as header/main */
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+footer p {
+    display: grid;
+    justify-content: end;
+    font-weight: bold;
+    /* makes text bold */
+    font-style: italic;
+    /* makes text italic */
+}
+
+footer nav {
+    display: grid;
+    grid-auto-flow: column;
+    /* place links side by side */
+    gap: 0.5rem;
+    justify-content: end;
+    /* push links to the right */
+}
+
+footer nav a {
+    display: block;
+
 }
