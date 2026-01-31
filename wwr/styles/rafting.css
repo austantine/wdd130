@@ -99,6 +99,18 @@ h2 {
     display: block;
 }
 
+.adventure {
+    width: 100%;
+    /* force heading to span the section */
+    text-align: center;
+    /* center the text */
+    margin-top: 1rem;
+    /* space above */
+    margin-bottom: 0.5rem;
+    /* closer to the div below */
+    display: block;
+}
+
 nav,
 p,
 section,
