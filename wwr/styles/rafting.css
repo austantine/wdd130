@@ -12,7 +12,11 @@
 }
 
 header {
-    background-color: var(--secondary-color);
+    background-color: var(--accent1-color);
+    color: var(--accent2-color);
+}
+
+header nav a {
     color: var(--accent2-color);
 }
 
@@ -101,4 +105,5 @@ h1 {
 
 .hero article h2 {
     display: inline-block;
+    color: #fff;
 }
