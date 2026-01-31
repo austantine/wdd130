@@ -13,7 +13,7 @@
 
 header {
     background-color: var(--accent1-color);
-    color: var(--accent2-color);
+    color: var(--secondary-color);
     display: grid;
     grid-template-columns: auto 1fr;
     /* logo takes natural width, nav fills rest */
