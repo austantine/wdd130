@@ -11,7 +11,16 @@
     "axe/text-alternatives": [
       "default",
       {
-        "document-title": "off"
+        "document-title": "off",
+        "frame-title": "off"
+      }
+    ],
+    "compat-api/html": [
+      "default",
+      {
+        "ignore": [
+          "iframe[referrerpolicy=no-referrer-when-downgrade]"
+        ]
       }
     ]
   }

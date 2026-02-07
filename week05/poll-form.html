@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Augustine Osazee Airhiavbere, WDD 130, poll exercise.">
+    <meta name="author" content="Augustine Airhiavbere">
+    <title>Poll Form</title>
+    <link rel="stylesheet" href="styles/poll-form.css">
+</head>
+
+<body>
+    <header>
+        <h1> Online Poll Form for HTML and CSS </h1>
+    </header>
+    <main>
+        <form>
+            <div class="form-item column2">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+
+            <div class="form-item column2">
+                <label for="usermail">Email:</label>
+                <input type="email" id="usermail" name="usermail" required>
+            </div>
+
+            <div class="form-item">
+                <label for="quantity">Select quantity:</label>
+                <select id="quantity" name="quantity">
+                    <option value="select one" selected disabled>Select One...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <label for="browser">What is your favourite browser?</label>
+                <select id="browser" name="browser">
+                    <option value="choose one" selected disabled>Choose one ...</option>
+                    <option value="chrome">Chrome</option>
+                    <option value="firefox">Firefox</option>
+                    <option value="edge">Edge</option>
+                    <option value="brave">Brave</option>
+                    <option value="safari">Safari</option>
+                </select>
+            </div>
+
+            <div class="form-item checkbox-item">
+                <label for="pet">Do you have a household pet?</label>
+                <input type="checkbox" id="pet" name="pet">
+            </div>
+
+
+            <div class="form-item">
+                <label for="feedback">List the places you lived:</label>
+                <textarea id="feedback" name="feedback" rows="4"
+                  placeholder="Stillwater Florida, Amsterdam, Netherlands, Nigeria"></textarea>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit">Submit Poll</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p> ©️2026 Design by 👨‍💻 Augustine Osazee Airhiavbere </p>
+    </footer>
+</body>
+
+</html>

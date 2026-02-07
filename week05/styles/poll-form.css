@@ -1,0 +1,152 @@
+/* General page styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9fafc;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Main content */
+main {
+    max-width: 650px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form items */
+.form-item {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="checkbox"],
+textarea,
+select {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Checkbox spacing */
+input[type="checkbox"] {
+    width: auto;
+    margin-top: 0.5rem;
+}
+
+/* Focus effect */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #3498db;
+    background-color: #ecf6ff;
+    outline: none;
+}
+
+/* Button styling */
+.form-actions {
+    text-align: center;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #34495e;
+    color: white;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+/* Responsive layout */
+@media (min-width: 600px) {
+
+    /* Two-column layout for label + input */
+    .column2 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .column2 label {
+        flex: 1;
+        /* label takes smaller portion */
+        margin-right: 1rem;
+        font-weight: bold;
+    }
+
+    .column2 input {
+        flex: 3;
+        /* input stretches wider */
+        padding: 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+        width: 100%;
+        /* ensures full stretch */
+    }
+}
+
+/* Checkbox alignment */
+.checkbox-item {
+    flex-direction: row;
+    /* horizontal layout */
+    align-items: center;
+    /* vertically center label + checkbox */
+}
+
+.checkbox-item label {
+    margin-right: 0.5rem;
+    /* spacing between label and checkbox */
+    margin-bottom: 0;
+    /* remove bottom margin */
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin: 0;
+    /* reset default spacing */
+    width: auto;
+    /* keep checkbox small */
+}
