@@ -7,6 +7,7 @@
     /*dark slate blue */
     --accent2-color: #e9c46a;
     /*light golden yellow */
+    --light-color: #f9fcf9;
     --heading-font: "Times New Roman", "Georgia", serif;
 
 }
@@ -76,7 +77,12 @@ footer {
     margin: 0 auto;
 }
 
-h1,
+.about-page {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    text-align: center;
+}
+
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
@@ -206,7 +212,7 @@ article {
 
 }
 
-h1 {
+.about-page {
     position: absolute;
     top: 20px;
     width: 100%;
@@ -286,15 +292,6 @@ footer nav a {
    Main Heading
    =========================== */
 /* Main heading directly under header */
-main h1 {
-    display: absolute;
-    text-align: center;
-    font-size: 2rem;
-    color: #2c3e50;
-    margin: 4rem auto 2rem auto;
-    /* add top margin to push it below header */
-    max-width: 840px;
-}
 
 /* ===========================
    Hero Form Section
@@ -417,11 +414,12 @@ textarea {
 
 button {
     background-color: #3498db;
-    color: white;
-    padding: 0.8rem 1.5rem;
+    color: var(--light-color);
+    padding: 0.8rem 5rem;
     border: none;
     border-radius: 4px;
     font-size: 1rem;
+    font-weight: bolder;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -460,10 +458,10 @@ main.contact-page {
     /* ensures content starts below header */
 }
 
-main.contact-page h2 {
+main.contact-page h1 {
     text-align: center;
     font-size: 2rem;
-    color: #2c3e50;
+    color: var(--accent1-color);
     margin: 0 auto 2rem auto;
     max-width: 840px;
 }
@@ -486,7 +484,7 @@ main.contact-page h2 {
 /* Heading block */
 .contact-page .figures h2 {
     margin-bottom: 1.5rem;
-    color: #2c3e50;
+    color: var(--accent1-color);
 }
 
 /* Container for figures (the second div) */
@@ -521,7 +519,7 @@ main.contact-page h2 {
 .contact-page .figures figcaption {
     margin-top: 0.5rem;
     font-size: 0.9rem;
-    color: #555;
+    color: var(--accent1-color);
 }
 
 /* Contact page footer */
@@ -531,15 +529,16 @@ main.contact-page h2 {
     margin: 2rem auto;
     /* center horizontally */
     padding: 1rem;
-    background-color: #2c3e50;
+    background-color: var(--accent1-color);
     /* keep your footer background */
-    color: white;
+    color: var(--accent2-color);
 
     display: flex;
     /* side-by-side layout */
 
     /* space between <p> and <nav> */
     align-items: center;
+    justify-content: center;
     /* align vertically */
 }
 
@@ -554,4 +553,34 @@ main.contact-page h2 {
 .contact-page.footer .socialmedia img {
     height: 30px;
     width: auto;
+}
+
+/* Checkbox alignment */
+.checkbox-item {
+    flex-direction: row;
+    /* horizontal layout */
+    align-items: center;
+    /* vertically center label + checkbox */
+    gap: 0.3rem;
+}
+
+.checkbox-item label {
+    margin-right: 0.5rem;
+    /* spacing between label and checkbox */
+    margin-bottom: 0;
+    /* remove bottom margin */
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin: 0;
+    /* reset default spacing */
+    width: auto;
+    /* keep checkbox small */
+}
+
+.contact-page p {
+    max-width: 840px;
+    text-align: center;
+    margin-top: 0 auto;
+
 }
