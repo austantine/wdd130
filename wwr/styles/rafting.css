@@ -78,6 +78,13 @@ footer {
 }
 
 .about-page {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    opacity: 0.7;
+    background-color: var(--accent1-color);
     font-family: var(--heading-font);
     color: var(--primary-color);
     text-align: center;
@@ -209,18 +216,6 @@ article {
     display: block;
     width: 100%;
     height: auto;
-
-}
-
-.about-page {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    opacity: 0.7;
-    background-color: var(--accent1-color);
-    color: #fff;
 
 }
 
@@ -587,6 +582,6 @@ main.contact-page h1 {
 .contact-page p {
     max-width: 840px;
     text-align: center;
-    margin-top: 0 auto;
+    margin-top: 0;
 
 }
