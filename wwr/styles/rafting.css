@@ -408,6 +408,10 @@ textarea {
     resize: vertical;
 }
 
+.contact-page .form-item {
+    font-weight: bold;
+}
+
 /* Button */
 .form-actions {
     text-align: center;
