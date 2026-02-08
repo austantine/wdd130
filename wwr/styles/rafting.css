@@ -915,22 +915,17 @@ header.trips nav a:hover {
     z-index: 2;
 }
 
-/* Trip Descriptions Row */
+/* Trip Descriptions Grid */
 .trip-descriptions {
-    display: flex;
-    /* horizontal layout */
-    justify-content: space-between;
-    /* spread evenly */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 equal columns */
     gap: 1rem;
     /* spacing between cards */
     padding: 2rem 0;
 }
 
 .trip {
-    flex: 1;
-    /* equal width for each card */
-    max-width: 260px;
-    /* ensures 3 fit inside 840px */
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -947,7 +942,7 @@ header.trips nav a:hover {
     height: 200px;
     /* fixed height for all images */
     object-fit: cover;
-    /* crop to fit without distortion */
+    /* crop consistently without distortion */
     display: block;
     border-bottom: 3px solid #004466;
 }
