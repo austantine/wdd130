@@ -370,7 +370,6 @@ footer nav a {
     flex: 1;
     font-weight: bold;
     margin: 0;
-    /* remove default margins */
 }
 
 /* Right column: radio options stacked vertically */
@@ -380,15 +379,23 @@ footer nav a {
     flex-direction: column;
     /* stack top to bottom */
     gap: 0.5rem;
-    /* spacing between options */
 }
 
+/* Each label wraps input + text */
 .radio-item label {
+    display: flex;
+    /* align radio + text side by side */
+    align-items: center;
+    /* vertical centering */
     font-weight: normal;
+    cursor: pointer;
 }
 
 .radio-item input[type="radio"] {
     margin-right: 0.3rem;
+    /* space before text */
+    flex-shrink: 0;
+    /* prevent shrinking */
 }
 
 /* Textarea */
