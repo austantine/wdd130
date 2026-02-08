@@ -408,8 +408,11 @@ textarea {
     resize: vertical;
 }
 
-.contact-page .form-item {
-    font-weight: bold;
+.contact-page .form-item label {
+    display: block;
+    font-weight: bold !important;
+    /* force bold if something overrides */
+    margin-bottom: 0.5rem;
 }
 
 /* Button */
