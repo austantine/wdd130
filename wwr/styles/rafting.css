@@ -557,31 +557,27 @@ main.contact-page h1 {
 
 /* Checkbox alignment */
 /* Contact page only */
+/* Scoped to Contact page only */
 .contact-page .checkbox-item {
     display: flex;
-    /* align children side by side */
+    /* side-by-side layout */
+    flex-direction: row;
+    /* horizontal alignment */
     align-items: center;
     /* vertical centering */
     gap: 0.5rem;
     /* spacing between checkbox and label */
 }
 
-.checkbox-item {
-    flex-direction: row;
-    /* horizontal layout */
-    align-items: center;
-    /* vertically center label + checkbox */
-    gap: 0.3rem;
+/* Label styling */
+.contact-page .checkbox-item label {
+    margin: 0;
+    /* remove default margins */
+    font-weight: normal;
 }
 
-.checkbox-item label {
-    margin-right: 0.5rem;
-    /* spacing between label and checkbox */
-    margin-bottom: 0;
-    /* remove bottom margin */
-}
-
-.checkbox-item input[type="checkbox"] {
+/* Checkbox styling */
+.contact-page .checkbox-item input[type="checkbox"] {
     margin: 0;
     /* reset default spacing */
     width: auto;
