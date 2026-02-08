@@ -556,6 +556,16 @@ main.contact-page h1 {
 }
 
 /* Checkbox alignment */
+/* Contact page only */
+.contact-page .checkbox-item {
+    display: flex;
+    /* align children side by side */
+    align-items: center;
+    /* vertical centering */
+    gap: 0.5rem;
+    /* spacing between checkbox and label */
+}
+
 .checkbox-item {
     flex-direction: row;
     /* horizontal layout */
