@@ -408,7 +408,7 @@ textarea {
     resize: vertical;
 }
 
-.contact-page .form-item label {
+.form-item label {
     display: block;
     font-weight: bold !important;
     /* force bold if something overrides */
