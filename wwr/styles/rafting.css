@@ -315,15 +315,26 @@ article {
     text-align: center;
 }
 
+/* robust rule for the about heading inside hero */
 .hero .about-page-h1 {
     position: absolute;
     top: 20px;
-    width: 100%;
+    left: 0;
+    right: 0;
+    /* use left/right instead of width:100% to avoid overflow issues */
     padding: 16px;
     text-align: center;
-    opacity: 0.7;
-    background-color: var(--accent1-color);
-    color: var(--light-color);
+    opacity: 0.9;
+    /* slightly higher for readability */
+    background-color: var(--accent1-color, #264653);
+    /* fallback color */
+    color: var(--light-color, #f9fcf9);
+    /* fallback color */
+    z-index: 20;
+    /* ensure it sits above hero image/content */
+    box-sizing: border-box;
+    margin: 0;
+    /* reset any inherited margins */
 }
 
 .hero article h2 {
