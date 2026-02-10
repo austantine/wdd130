@@ -24,8 +24,8 @@
    Base Body
    =========================== */
 body {
-    font-family: var(--heading-font);
-    color: var(--accent1-color);
+    font-family: var(--heading-font, Arial, san-serif);
+    color: var(--accent1-color, #000);
     background-color: #f9f9f9;
     line-height: 1.6;
 }
@@ -54,7 +54,7 @@ footer {
 /* About / default header (keeps original grid layout used on About) */
 header {
     background-color: var(--accent1-color);
-    color: var(--secondary-color);
+    color: var(--secondary-color, #fff);
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
