@@ -1,62 +1,17 @@
+/* ===========================
+   Variables & Global Reset
+   =========================== */
 :root {
     --primary-color: #055a05;
-    /*forest green*/
+    /* forest green */
     --secondary-color: #f4a261;
-    /*warm sand*/
+    /* warm sand */
     --accent1-color: #264653;
-    /*dark slate blue */
+    /* dark slate blue */
     --accent2-color: #e9c46a;
-    /*light golden yellow */
+    /* light golden yellow */
     --light-color: #f9fcf9;
     --heading-font: "Times New Roman", "Georgia", serif;
-
-}
-
-header {
-    background-color: var(--accent1-color);
-    color: var(--secondary-color);
-    display: grid;
-    grid-template-columns: auto 1fr;
-    /* logo takes natural width, nav fills rest */
-    align-items: center;
-    /* vertical alignment */
-    max-width: 840px;
-    /* matches your layout */
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-header img.logo {
-    max-height: 60px;
-}
-
-header nav a {
-    text-decoration: none;
-    font-weight: bold;
-    display: block;
-    /* makes background/border apply neatly */
-    padding: 0.5rem 1rem;
-    /* spacing inside each link */
-    background-color: var(--accent2-color);
-    /* your chosen background */
-    border: 1px solid var(--accent1-color);
-    /* border around each link */
-    text-align: center;
-    /* centers text inside the box */
-    color: var(--accent1-color);
-    /* text color */
-    border-radius: 4px;
-    /* optional rounded corners */
-
-}
-
-header nav {
-    display: flex;
-    /* flex for horizontal layout */
-    justify-content: flex-end;
-    /* push links to the right */
-    gap: 1rem;
-    /* spacing between links */
 }
 
 * {
@@ -65,11 +20,27 @@ header nav {
     box-sizing: border-box;
 }
 
+/* ===========================
+   Base Body
+   =========================== */
 body {
     font-family: var(--heading-font);
     color: var(--accent1-color);
+    background-color: #f9f9f9;
+    line-height: 1.6;
 }
 
+/* Index page body override (keeps original index styling) */
+body.index-page {
+    font-family: var(--heading-font);
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* ===========================
+   Shared Layout Containers
+   =========================== */
 header,
 main,
 footer {
@@ -77,49 +48,128 @@ footer {
     margin: 0 auto;
 }
 
-.about-page {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    opacity: 0.7;
+/* ===========================
+   Header (About default + page overrides)
+   =========================== */
+/* About / default header (keeps original grid layout used on About) */
+header {
     background-color: var(--accent1-color);
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    text-align: center;
+    color: var(--secondary-color);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    max-width: 840px;
+    margin: 0 auto;
+    gap: 1rem;
 }
 
+header img.logo {
+    max-height: 60px;
+}
+
+/* Shared nav link base used across pages */
+header nav a {
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent2-color);
+    border: 1px solid var(--accent1-color);
+    text-align: center;
+    color: var(--accent1-color);
+    border-radius: 4px;
+}
+
+/* Shared nav container base */
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Index page header overrides (preserve original index look) */
+header.index-page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004466;
+    padding: 1rem 2rem;
+}
+
+header.index-page .logo {
+    height: 60px;
+}
+
+header.index-page nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+header.index-page nav a {
+    color: var(--light-color);
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+header.index-page nav a:hover {
+    color: var(--accent2-color);
+}
+
+/* Trips page header overrides (preserve original trips look) */
+header.trips {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004466;
+    padding: 1rem 2rem;
+}
+
+header.trips .logo {
+    height: 60px;
+}
+
+header.trips nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+header.trips nav a {
+    color: var(--light-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header.trips nav a:hover {
+    color: #ffcc00;
+}
+
+/* ===========================
+   Headings and small utilities
+   =========================== */
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
     text-align: center;
 }
 
-.h2-history {
-    width: 100%;
-    /* force heading to span the section */
-    text-align: center;
-    /* center the text */
-    margin-top: 1rem;
-    /* space above */
-    margin-bottom: 0.5rem;
-    /* closer to the div below */
-    display: block;
-}
-
+.h2-history,
 .adventure {
     width: 100%;
-    /* force heading to span the section */
     text-align: center;
-    /* center the text */
     margin-top: 1rem;
-    /* space above */
     margin-bottom: 0.5rem;
-    /* closer to the div below */
     display: block;
 }
 
+/* Basic spacing for common elements */
 nav,
 p,
 section,
@@ -128,10 +178,12 @@ article {
     padding: 8px;
 }
 
+/* ===========================
+   History Section (About)
+   =========================== */
 .history {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    /* text | image | text */
     align-items: center;
     gap: 1rem;
     max-width: 1000px;
@@ -147,67 +199,96 @@ article {
     height: auto;
     display: block;
     background-color: #f9f9f9;
-    /* subtle background */
     border: 2px solid #333;
-    /* border around image */
     padding: 0.5rem;
-    /* spacing inside border */
     border-radius: 8px;
-    /* optional rounded corners */
     box-shadow: 0 0 30px gray;
 }
 
-/* Responsive stacking on smaller screens */
 @media (max-width: 768px) {
     .history {
         grid-template-columns: 1fr;
-        /* single column */
     }
 
     .history img {
         margin: 1rem auto;
-        /* center image */
     }
 }
 
-/* end of history */
+/* ===========================
+   Figures (shared) + Contact overrides
+   =========================== */
 .figures {
     display: flex;
-    /* arrange figures in a row */
     justify-content: space-between;
-    /* spread them evenly */
     gap: 1rem;
-    /* space between figures */
     max-width: 840px;
-    /* container max width */
     margin: 0 auto;
-    /* center on page */
     flex-wrap: wrap;
-    /* allow wrapping on smaller screens */
 }
 
 .figures figure {
     flex: 1 1 calc(20% - 1rem);
-    /* each figure ~20% of row */
     text-align: center;
-    /* captions centered under images */
     box-sizing: border-box;
 }
 
 .figures img {
     width: 100%;
-    /* image fills its figure box */
     height: auto;
     display: block;
     box-shadow: 0 0 30px gray;
 }
 
-/*end of slideshow */
+/* Contact page figures override (keeps original contact layout) */
+.contact-page .figures {
+    max-width: 840px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
+.contact-page .figures h2 {
+    margin-bottom: 1.5rem;
+    color: var(--accent1-color);
+}
+
+.contact-page .figures > div:last-child {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-page .figures figure {
+    width: 160px;
+    flex: 0 0 auto;
+}
+
+.contact-page .figures img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.contact-page .figures figcaption {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--accent1-color);
+}
+
+/* ===========================
+   Social media small utility
+   =========================== */
 .socialmedia a {
     text-decoration: none;
 }
 
+/* ===========================
+   Hero sections (kept page-specific)
+   =========================== */
 .hero {
     position: relative;
 }
@@ -216,7 +297,6 @@ article {
     display: block;
     width: 100%;
     height: auto;
-
 }
 
 .hero article img {
@@ -226,70 +306,89 @@ article {
 
 .hero article {
     position: absolute;
-    /* overlay on top of the image */
     bottom: 0;
-    /* stick to the bottom of the hero */
     left: 0;
-    /* start at the left edge */
     width: 100%;
-    /* spread horizontally across the image */
     background: rgba(0, 0, 0, 0.5);
-    /* semi-transparent background for readability */
     color: var(--accent2-color);
-    /* use your golden yellow text */
     padding: 16px;
     text-align: center;
-    /* center the text horizontally */
+}
+
+.hero .about-page-h1 {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+    opacity: 0.7;
+    background-color: var(--accent1-color);
+    color: var(--light-color);
 }
 
 .hero article h2 {
     display: inline-block;
-    color: #fff;
+    color: var(--light-color);
 }
 
-footer {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    /* text on left, nav on right */
-    align-items: center;
-    /* vertical alignment */
-    max-width: 840px;
-    /* same width as header/main */
-    margin: 0 auto;
-    gap: 1rem;
+/* Index hero (keeps original index hero rules) */
+.hero-index {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
 }
 
-footer p {
-    display: grid;
-    justify-content: end;
-    font-weight: bold;
-    /* makes text bold */
-    font-style: italic;
-    /* makes text italic */
+.rafting27_1024 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-footer nav {
-    display: grid;
-    grid-auto-flow: column;
-    /* place links side by side */
-    gap: 0.5rem;
-    justify-content: end;
-    /* push links to the right */
+.hero-index .hero-text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--light-color);
+    font-size: 2.2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    text-align: center;
+    z-index: 2;
 }
 
-footer nav a {
+/* Trips hero (keeps original trips hero rules) */
+.hero-trips {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.hero-trips .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-
 }
 
-/*css rule for contact us page */
-/* ===========================
-   Main Heading
-   =========================== */
-/* Main heading directly under header */
+.hero-trips .hero-text {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--light-color);
+    font-size: 2.2rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    z-index: 2;
+}
 
 /* ===========================
-   Hero Form Section
+   Contact form and form controls (kept intact)
    =========================== */
 .contact-form {
     max-width: 840px;
@@ -298,10 +397,8 @@ footer nav a {
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
     display: flex;
     flex-direction: row;
-    /* map + form side by side */
     gap: 2rem;
     align-items: flex-start;
 }
@@ -325,9 +422,7 @@ footer nav a {
     text-align: left;
 }
 
-/* ===========================
-   Form Controls
-   =========================== */
+/* Form controls */
 .form-item {
     margin-bottom: 1.5rem;
     display: flex;
@@ -335,6 +430,7 @@ footer nav a {
 }
 
 .column2 {
+    display: flex;
     flex-direction: row;
     align-items: center;
 }
@@ -354,48 +450,38 @@ footer nav a {
     width: 100%;
 }
 
-/* Radio group container: two-column layout */
+/* Radio group */
 .radio-group {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    /* align items at the top */
     gap: 2rem;
-    /* spacing between columns */
     margin-bottom: 1.5rem;
 }
 
-/* Left column: the <p> */
 .radio-group p {
     flex: 1;
     font-weight: bold;
     margin: 0;
 }
 
-/* Right column: radio options stacked vertically */
 .radio-item {
     flex: 2;
     display: flex;
     flex-direction: column;
-    /* stack top to bottom */
     gap: 0.5rem;
 }
 
-/* Each label wraps input + text */
 .radio-item label {
     display: flex;
-    /* align radio + text side by side */
     align-items: center;
-    /* vertical centering */
     font-weight: normal;
     cursor: pointer;
 }
 
 .radio-item input[type="radio"] {
     margin-right: 0.3rem;
-    /* space before text */
     flex-shrink: 0;
-    /* prevent shrinking */
 }
 
 /* Textarea */
@@ -411,11 +497,10 @@ textarea {
 .form-item label {
     display: block;
     font-weight: bold !important;
-    /* force bold if something overrides */
     margin-bottom: 0.5rem;
 }
 
-/* Button */
+/* Buttons */
 .form-actions {
     text-align: center;
     margin-top: 1rem;
@@ -437,259 +522,27 @@ button:hover {
     background-color: #2980b9;
 }
 
-/* ===========================
-   Responsive Layout
-   =========================== */
-@media (max-width: 768px) {
-    .contact-form {
-        flex-direction: column;
-        /* stack map and form vertically */
-    }
-
-    .column2 {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .column2 label {
-        margin-bottom: 0.5rem;
-    }
-
-    .column2 input {
-        flex: unset;
-        width: 100%;
-    }
-}
-
-/* Only apply spacing on the Contact page */
-main.contact-page {
-    padding-top: 20px;
-    /* ensures content starts below header */
-}
-
-main.contact-page h1 {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--accent1-color);
-    margin: 0 auto 2rem auto;
-    max-width: 840px;
-}
-
-/* Figures section only on Contact page */
-
-.contact-page .figures {
-    max-width: 840px;
-    /* container width */
-    margin: 2rem auto;
-    /* center container horizontally */
-    display: flex;
-    flex-direction: column;
-    /* stack heading div above figures div */
-    align-items: center;
-    /* center both children horizontally */
-    text-align: center;
-}
-
-/* Heading block */
-.contact-page .figures h2 {
-    margin-bottom: 1.5rem;
-    color: var(--accent1-color);
-}
-
-/* Container for figures (the second div) */
-.contact-page .figures > div:last-child {
-    display: flex;
-    /* horizontal alignment of figures */
-    justify-content: center;
-    /* center figures in the row */
-    gap: 1.5rem;
-    /* spacing between figures */
-    flex-wrap: wrap;
-    /* allow wrapping on smaller screens */
-}
-
-/* Each figure */
-.contact-page .figures figure {
-    width: 160px;
-    /* fixed width for each figure */
-    flex: 0 0 auto;
-    /* prevent stretching */
-}
-
-/* Images inside figures */
-.contact-page .figures img {
-    width: 100%;
-    /* image fills the figure width */
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-/* Captions */
-.contact-page .figures figcaption {
-    margin-top: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--accent1-color);
-}
-
-/* Contact page footer */
-.contact-page.footer {
-    max-width: 840px;
-    /* match main container width */
-    margin: 2rem auto;
-    /* center horizontally */
-    padding: 1rem;
-    background-color: var(--accent1-color);
-    /* keep your footer background */
-    color: var(--accent2-color);
-
-    display: flex;
-    /* side-by-side layout */
-
-    /* space between <p> and <nav> */
-    align-items: center;
-    justify-content: center;
-    /* align vertically */
-}
-
-/* Social media nav inside footer */
-.contact-page.footer .socialmedia {
-    display: flex;
-    /* horizontal row of icons */
-    gap: 1rem;
-    /* spacing between icons */
-}
-
-.contact-page.footer .socialmedia img {
-    height: 30px;
-    width: auto;
-}
-
-/* Checkbox alignment */
-/* Contact page only */
-/* Scoped to Contact page only */
+/* Checkbox alignment (contact page) */
 .contact-page .checkbox-item {
     display: flex;
-    /* side-by-side layout */
     flex-direction: row;
-    /* horizontal alignment */
     align-items: center;
-    /* vertical centering */
     gap: 0.5rem;
-    /* spacing between checkbox and label */
 }
 
-/* Label styling */
 .contact-page .checkbox-item label {
     margin: 0;
-    /* remove default margins */
     font-weight: normal;
 }
 
-/* Checkbox styling */
 .contact-page .checkbox-item input[type="checkbox"] {
     margin: 0;
-    /* reset default spacing */
     width: auto;
-    /* keep checkbox small */
 }
 
-.contact-page p {
-    max-width: 840px;
-    text-align: center;
-    margin-top: 0;
-
-}
-
-/*index page styling */
-/* Reset & Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-}
-
-/* Header (index-page) */
-header.index-page {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #004466;
-    /* make sure you use background-color */
-    padding: 1rem 2rem;
-}
-
-/* Logo */
-header.index-page .logo {
-    height: 60px;
-}
-
-/* Navigation */
-header.index-page nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    /* evenly distribute links */
-    align-items: center;
-    /* vertical centering */
-    gap: 2rem;
-    /* spacing between links */
-    margin: 0;
-    padding: 0;
-}
-
-header.index-page nav a {
-    color: var(--light-color);
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-header.index-page nav a:hover {
-    color: var(--accent2-color);
-    /* highlight on hover */
-}
-
-/* Hero Section (hero-index) */
-.hero-index {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-}
-
-.rafting27_1024 {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-text {
-    position: absolute;
-    top: 10%;
-    /* place near the top of the image */
-    left: 50%;
-    /* horizontally center */
-    transform: translateX(-50%);
-    /* only shift horizontally */
-    color: var(--light-color);
-    font-size: 2.2rem;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    white-space: nowrap;
-    /* keep text on a single line */
-    text-align: center;
-    z-index: 2;
-    /* ensure it sits above the image */
-}
-
-/* Newsletter Section */
+/* ===========================
+   Newsletter (index) and CTA (shared)
+   =========================== */
 .newsletter {
     background: #e6f2f5;
     padding: 2.5rem;
@@ -708,7 +561,7 @@ header.index-page nav a:hover {
     max-width: 450px;
     margin: 0 auto;
     gap: 1rem;
-    background: #fff;
+    background: var(--light-color);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
@@ -737,7 +590,7 @@ header.index-page nav a:hover {
     padding: 0.75rem;
     font-size: 1rem;
     background: #004466;
-    color: #fff;
+    color: var(--light-color);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -749,11 +602,11 @@ header.index-page nav a:hover {
     background: #006699;
 }
 
-/* Call to Action */
+/* CTA (kept consistent across pages) */
 .cta {
     text-align: center;
     padding: 2rem;
-    background: #fff;
+    background: #e6f2f5;
 }
 
 .cta h2 {
@@ -765,17 +618,21 @@ header.index-page nav a:hover {
     margin-top: 1rem;
     padding: 0.75rem 1.5rem;
     background: #004466;
-    color: #fff;
+    color: var(--light-color);
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
 .cta-button:hover {
     background: #006699;
 }
 
-/* Grid Layout Section */
+/* ===========================
+   Grid / Trips / Index specific sections (kept intact)
+   =========================== */
+/* Grid layout (index) */
 .grid-layout {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -784,7 +641,7 @@ header.index-page nav a:hover {
 }
 
 .grid-item {
-    background: #fff;
+    background: var(--light-color);
     padding: 1rem;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -797,136 +654,21 @@ header.index-page nav a:hover {
     margin-bottom: 1rem;
 }
 
-/* Footer (footer-index) */
-footer.footer-index {
-    background: #004466;
-    color: var(--accent2-color);
-    text-align: center;
-    padding: 1rem;
-}
-
-footer.footer-index nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 0.5rem;
-}
-
-footer.footer-index a {
-    color: var(--accent2-color);
-    text-decoration: none;
-}
-
-footer.footer-index a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Tweaks */
-@media (max-width: 840px) {
-    header.index-page {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .hero-text {
-        font-size: 1.8rem;
-        padding: 0 1rem;
-    }
-
-    .newsletter form {
-        width: 100%;
-    }
-
-    .cta-button {
-        width: 100%;
-    }
-}
-
-/*Trips sections */
-/* Hero Banner for Trips Page */
-/* Global site container */
+/* Trips specific */
 .site-container {
     max-width: 840px;
-    /* constrain everything to 840px */
     margin: 0 auto;
-    /* center horizontally */
 }
 
-/* Header */
-header.trips {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #004466;
-    padding: 1rem 2rem;
-}
-
-header.trips .logo {
-    height: 60px;
-}
-
-header.trips nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
-
-header.trips nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header.trips nav a:hover {
-    color: #ffcc00;
-}
-
-/* Hero Banner */
-.hero-trips {
-    position: relative;
-    width: 100%;
-    /* full width inside 840px */
-    height: 350px;
-    overflow: hidden;
-    margin: 0;
-    /* remove default margins */
-}
-
-.hero-trips .hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    /* ensures no inline spacing */
-}
-
-.hero-trips .hero-text {
-    position: absolute;
-    top: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: var(--light-color);
-    font-size: 2.2rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    white-space: nowrap;
-    z-index: 2;
-}
-
-/* Trip Descriptions Grid */
 .trip-descriptions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* 3 equal columns */
     gap: 1rem;
-    /* spacing between cards */
     padding: 2rem 0;
 }
 
 .trip {
-    background: #fff;
+    background: var(--light-color);
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -940,9 +682,7 @@ header.trips nav a:hover {
 .trip img {
     width: 100%;
     height: 200px;
-    /* fixed height for all images */
     object-fit: cover;
-    /* crop consistently without distortion */
     display: block;
     border-bottom: 3px solid #004466;
 }
@@ -962,7 +702,7 @@ header.trips nav a:hover {
     color: #555;
 }
 
-/* Trips Table */
+/* Trips table */
 .trips-table {
     padding: 2rem;
 }
@@ -995,29 +735,61 @@ header.trips nav a:hover {
     background: #f2f2f2;
 }
 
-/* CTA Section */
-.cta {
-    text-align: center;
-    padding: 2rem;
-    background: #e6f2f5;
+/* ===========================
+   Footers (kept page-specific)
+   =========================== */
+footer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    max-width: 840px;
+    margin: 0 auto;
+    gap: 1rem;
 }
 
-.cta-button {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    background: #004466;
-    color: var(--light-color);
-    text-decoration: none;
+footer p {
+    display: grid;
+    justify-content: end;
     font-weight: bold;
-    border-radius: 5px;
+    font-style: italic;
 }
 
-.cta-button:hover {
-    background: #006699;
+footer nav {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0.5rem;
+    justify-content: end;
 }
 
-/* Footer */
+footer nav a {
+    display: block;
+}
+
+/* Index footer */
+footer.footer-index {
+    background: #004466;
+    color: var(--accent2-color);
+    text-align: center;
+    padding: 1rem;
+}
+
+footer.footer-index nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+footer.footer-index a {
+    color: var(--accent2-color);
+    text-decoration: none;
+}
+
+footer.footer-index a:hover {
+    text-decoration: underline;
+}
+
+/* Trips footer */
 .footer-trips {
     background-color: #004466;
     color: var(--light-color);
@@ -1041,4 +813,69 @@ header.trips nav a:hover {
 
 .footer-trips nav a:hover {
     color: var(--secondary-color);
+}
+
+/* Contact footer (kept intact) */
+.contact-page.footer {
+    max-width: 840px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: var(--accent1-color);
+    color: var(--accent2-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-page.footer .socialmedia {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-page.footer .socialmedia img {
+    height: 30px;
+    width: auto;
+}
+
+/* ===========================
+   Responsive tweaks (kept original breakpoints)
+   =========================== */
+@media (max-width: 840px) {
+    header.index-page {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-text {
+        font-size: 1.8rem;
+        padding: 0 1rem;
+    }
+
+    .newsletter form {
+        width: 100%;
+    }
+
+    .cta-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        flex-direction: column;
+    }
+
+    .column2 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .column2 label {
+        margin-bottom: 0.5rem;
+    }
+
+    .column2 input {
+        flex: unset;
+        width: 100%;
+    }
 }
